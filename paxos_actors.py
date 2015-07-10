@@ -111,7 +111,8 @@ class Proposer(PaxosActor):
     def receive_accepted(self, accepter, instance_id, ballot_id, value):
         pass
 
-# I am making the Accepter respond with the highest instance ID as well, so as to make proposers which propose on a lower proposal ID know to propose above the highest seen instance.
+# I am making the Accepter respond with the highest instance ID as well,
+# so as to make proposers which propose on a lower proposal ID know to propose above the highest seen instance.
 
 class Accepter(PaxosActor):
     def __init__(self, learners=[]):
